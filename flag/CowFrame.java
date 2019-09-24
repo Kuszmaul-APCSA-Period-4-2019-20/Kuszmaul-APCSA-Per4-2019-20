@@ -7,7 +7,11 @@ import javax.swing.JFrame;
 //version 2
 
 
-
+/**
+ * 
+ * @author 95023871
+ *
+ */
 public class CowFrame extends JFrame {
 	private final Color BISQUE = new Color(0xcdb79e);
 	private final Color COWLEG = new Color(0xFFD39B);
@@ -104,6 +108,13 @@ public class CowFrame extends JFrame {
 		
 	}
 	
+	/**
+	 * For drawing stars
+	 * @param g
+	 * @param x
+	 * @param y
+	 * @param radius
+	 */
     void drawStar(Graphics g, int x, int y, int radius) {
         // Code from: https://codereview.stackexchange.com/questions/142979/drawing-a-star-in-awt
         g.setColor(Color.WHITE);
@@ -134,24 +145,4 @@ public class CowFrame extends JFrame {
         g.fillPolygon(xCoordOfStar, yCoordOfStar, X.length);
     }
 
-	public void star()
-	{
-		//g.setColor(Color.BLUE);
-		int x = 16;
-		int y = 16;
-		int[] a = new int[x];
-		int[] b = new int[y];
-		//g.fillPolygon(a , b, 100);
-		int radius[] = {120,40,90,40};
-		
-		for(double i=0; i<16; i++) {
-			int thing = (int) (i);
-			double j = Math.cos(i*((2*Math.PI)/5))*radius[thing % 4];
-	        double k = Math.sin(i*((2*Math.PI)/5))*radius[thing % 4];
-
-	        a[thing] = (int) j+200;
-	        b[thing] = (int) k+200;
-		}
-		System.out.println(Arrays.toString(a));
-	}
 }
