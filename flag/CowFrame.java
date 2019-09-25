@@ -3,12 +3,11 @@ import java.awt.*;
 import java.util.Arrays;
 
 import javax.swing.JFrame;
-//this is 100% a cow your eyes deceive you
-//version 2
+
 
 
 /**
- * 
+ * For some reasons, there are some differences between mac and windows.
  * @author 95023871
  *
  */
@@ -22,6 +21,7 @@ public class CowFrame extends JFrame {
 		init();
 	}
 	
+	//initial frame size
 	public void init() {
 		setSize(950, 600);
 		setBackground(Color.WHITE);
@@ -35,7 +35,7 @@ public class CowFrame extends JFrame {
 			var width = this.getWidth();
 			
 			
-			//divisible by 13 calculation
+			//divisible by 13 calculation; fixing proportions for all
 			int flagheight = height;
 			if (height%13>0) {
 				flagheight = height-(height%13);
@@ -52,7 +52,6 @@ public class CowFrame extends JFrame {
 				flagheight=(int)(width/1.9)-(width%13);
 			}
 			
-			//still needs some work, flag is offset by the 30 pixels added, need to fix somehow
 			if(height<50) {
 				//flagheight=(int)(height/1.9)-(height%13);
 				flagheight = 13;
@@ -67,7 +66,7 @@ public class CowFrame extends JFrame {
 			
 			
 			
-			
+			//drawing flag
 			g.setColor(Color.WHITE);
 			g.fillRect(0,  20, width, (int)(flagwidth)+30);
 			
@@ -82,6 +81,7 @@ public class CowFrame extends JFrame {
 			
 			//drawStar(g, 100, 100, (int)((flagheight/1.9)*0.0616));
 			
+			//drawing stars
 			for(int u=0; u<12; u++) {
 				if(u%2>0) {
 					//idk if the q for loop is actually nessecary but it works so I ain't touching it
